@@ -1,0 +1,87 @@
+*{
+   margin: 0; 
+   padding: 0;
+   box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+nav{
+    background-color: black;
+    width: 800px;
+    margin: auto;
+    font-family: arial;
+}
+nav ul li{
+    display: inline-block;
+    position: relative;
+}
+nav ul li a{
+    color: blue;
+    display: block;
+    padding: 15px 25px;
+    transition: 0.4sec;
+    position: relative;
+    z-index: 1;
+}
+nav ul li:hover a{
+    background-color: green;
+}
+nav ul li a::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.42sec;
+}
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: 0.42sec;
+}
+nav ul li:hover > a::after,
+nav ul li:hover > a::before{
+    width: 100%;
+}
+nav ul li ul{
+    opacity: 0;
+    visibility: 0;
+    margin-top: 50px;
+    position: absolute;
+    background-color: gray;
+    width: 200px;
+    transition: 0.5sec;
+}
+nav ul li:hover > ul{
+    opacity: 1;
+    margin-top: 0;
+    visibility: visible;
+}
+nav ul li ul li{
+    display: block;
+    margin-bottom: 10px;
+}
+nav ul li a::before,
+nav ul li a::after{
+    display: none;
+}
+nav ul li ul li:hover > a{
+    background-color: black;
+}
+nav ul li ul li ul{
+    left: 100%;
+    top: 0;
+    background-color: bisque;
+}
